@@ -21,7 +21,7 @@ If you have the time, you can always work on a GUI after the basics are complete
   * items
   * enemies
 
-- Enemiy
+- Enemy
   * name
   * hp
   * attack
