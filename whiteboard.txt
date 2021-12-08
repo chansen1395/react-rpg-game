@@ -1,0 +1,43 @@
+Choose Your Own Adventure / Dungeon Crawler
+
+Create a choose your own adventure or dungeon crawler game using Firestore to 
+store adventure "scenes" or dungeon "rooms." This is more challenging than it 
+sounds and it's important to think carefully about how data will be structured.
+How can you associate two scenes with each other, or two rooms? Once you've 
+figured out a data structure, focus on building a simple text-based implementation. 
+If you have the time, you can always work on a GUI after the basics are complete.
+
+*** DATA STRUCTURE ***
+- Player
+  * name
+  * hp
+  * attack
+  * currentRoom
+  *** inventory - leave out for now?
+
+- Room
+  * description
+  * adjacentRooms (array)
+  * items
+  * enemies
+
+- Enemiy
+  * name
+  * hp
+  * attack
+  * currentRoom
+
+- Item
+  * name
+  * description
+  * effect
+
+
+*** MVP ***
+
+1. have a player start a new game in a room, be able to move to another room
+2. Interactions in the room - description, possible directions to move (walls impassible)
+3. Interactions with enemies and Items
+  - open fight UI with enemy
+  - use items & attacks etc
+  - check hp after each change in player's state & enemy's state
