@@ -8,30 +8,42 @@ figured out a data structure, focus on building a simple text-based implementati
 If you have the time, you can always work on a GUI after the basics are complete.
 
 *** DATA STRUCTURE ***
-- Player
-  * name
-  * hp
-  * attack
-  * currentRoom
-  *** inventory - leave out for now?
 
-- Room
+// NoSQL databases scale well horizontally, encouraging multiple large, shallow collections
+
+- Player (info stored in database as 'player' collection and updated each round)
+  * name
+  * hp (state)
+  * attack
+  * currentRoom (.where(player.currentRoom === room.id)) (state)
+  *** inventory - leave out for now? (array of ids) (.where(thisItem => thisItem.id === item.id))
+
+- Room (info hard-coded into database as 'rooms' collection)
+  * name
   * description
   * adjacentRooms (array)
-  * items
-  * enemies
+  * item ids (array)
+  * enemy ids (array)
+  * id
 
-- Enemy
+- Enemy (info hard-coded into database as 'enemies' collection)
   * name
   * hp
   * attack
   * currentRoom
+  * id
 
-- Item
+- Item (info hard-coded into database as 'items' collection)
   * name
   * description
   * effect
+  * id
 
+*** GameControl ***
+
+- Game control will toggle which room will be shown (currentRoom)
+- Player will always be shown, and with each action done, player state will be updated
+  - i.e. when a player uses an item, player gets damage dealt to them
 
 *** MVP ***
 

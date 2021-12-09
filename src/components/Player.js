@@ -13,7 +13,7 @@ function Player(props) {
 }
 
 
-Player.PropTypes = {
+Player.propTypes = {
   name: PropTypes.string,
   hp: PropTypes.number,
   attack: PropTypes.number,
